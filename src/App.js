@@ -18,8 +18,8 @@ function App() {
     
     fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
       .then(response => response.json())
-      .then((user) => {
-        setSelectedCard(user);
+      .then((users) => {
+        setSelectedCard(users);
         
       });
   }
