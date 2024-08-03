@@ -6,7 +6,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState(null);
 
   useEffect(() => {
-    // Fetching data from the API and setting it in state
+    
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then((data) => {
@@ -14,39 +14,39 @@ function App() {
       });
   }, []);
 
-  function Hagoclick(id) {
-    // Fetching the selected card data from the API and setting it in state
+  function UserClick(id) {
+    
     fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
       .then(response => response.json())
       .then((user) => {
         setSelectedCard(user);
-        console.log(user); // Log selected card data to the console
+        
       });
   }
 
-  function handleDelete(id) {
+  function HandleDelete(id) {
     
     setList(prevList => prevList.filter(post => post.id !== id));
   }
 
   return (
     <div className="App">
-      {/* Conditionally applying the 'hidden' class based on selectedCard state */}
+      
       <div className={`card-container ${selectedCard ? 'hidden' : ''}`}>
-        {list.map((usuario) => (
-          <div key={usuario.id} className="card" onClick={() => Hagoclick(usuario.id)}>
+        {list.map((user) => (
+          <div key={user.id} className="card" onClick={() => UserClick(user.id)}>
             <div className="card-header">
-              {usuario.title}
+              {user.title}
             </div>
             <div className="card-body">
               Haz click para obtener más información.
-              <button className='button-delete' onClick={() => handleDelete(usuario.id)}>Eliminar</button>
+              <button className='button-delete' onClick={() => HandleDelete(user.id)}>Eliminar</button>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Render selected card details if selectedCard is not null */}
+     
       {selectedCard && (
         <div className="selected-card">
           <h2 className='title-card'>{selectedCard.title}</h2>
