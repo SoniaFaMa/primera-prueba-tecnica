@@ -24,6 +24,11 @@ function App() {
       });
   }
 
+  function handleDelete(id) {
+    
+    setList(prevList => prevList.filter(post => post.id !== id));
+  }
+
   return (
     <div className="App">
       {/* Conditionally applying the 'hidden' class based on selectedCard state */}
@@ -35,6 +40,7 @@ function App() {
             </div>
             <div className="card-body">
               Haz click para obtener más información.
+              <button className='button-delete' onClick={() => handleDelete(usuario.id)}>Eliminar</button>
             </div>
           </div>
         ))}
@@ -45,6 +51,7 @@ function App() {
         <div className="selected-card">
           <h2 className='title-card'>{selectedCard.title}</h2>
           <p className='body-card'>{selectedCard.body}</p>
+          <button className='button-back' onClick={() => setSelectedCard(null)}>Volver</button>
         </div>
       )}
     </div>
