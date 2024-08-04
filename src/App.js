@@ -34,13 +34,17 @@ function App() {
       
       <div className={`card-container ${selectedCard ? 'hidden' : ''}`}>
         {list.map((user) => (
-          <div key={user.id} className="card" onClick={() => UserClick(user.id)}>
+          <div key={user.id} className="card">
             <div className="card-header">
               {user.title}
             </div>
             <div className="card-body">
               Haz click para obtener más información.
+              <div className='container-buttons'>
+            
               <button className='button-delete' onClick={() => HandleDelete(user.id)}>Eliminar</button>
+              <button className='button-select-card' onClick={()=> UserClick(user.id)}>Ver</button>
+              </div>
             </div>
           </div>
         ))}
