@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import SelectCard from './Components/SelectCard';
+import SelectCard from './Components/SelectCard/SelectCard';
+import Buttons from './Components/Buttons/Buttons'
 import './App.css';
 
 function App() {
@@ -41,11 +42,10 @@ function App() {
             </div>
             <div className="card-body">
               Haz click para obtener más información.
-              <div className='container-buttons'>
-            
-              <button className='button-delete' onClick={() => HandleDelete(user.id)}>Eliminar</button>
-              <button className='button-select-card' onClick={()=> UserClick(user.id)}>Ver</button>
-              </div>
+              <Buttons user={user}
+              HandleDelete={HandleDelete}
+              UserClick={UserClick}/>
+              
             </div>
           </div>
         ))}
@@ -59,6 +59,9 @@ function App() {
       )}
     </div>
   );
+
+  
+
 }
 
 

@@ -42,32 +42,3 @@
 
 
 
-.button-delete {
-  background-color: #d9534f;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 14px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-
-.button-select-card{
-  background-color: #04b69e;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 14px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-.container-buttons{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 150px;
-  margin: 45px auto;
-}
