@@ -1,0 +1,28 @@
+.card-header {
+    background-color: #f6e8f7;
+    color: #000000;
+    padding: 12px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    height: 30px; 
+    width: 300px;
+  }
+  .card-body {
+    width: 300px;
+    height: 100px; 
+    border: 1px solid #F5DEB3;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fffbf4;
+    color: black;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+    

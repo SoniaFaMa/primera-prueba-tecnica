@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import SelectCard from './Components/SelectCard/SelectCard';
-import Buttons from './Components/Buttons/Buttons'
+import CardList from './Components/CardList/CardList';
 import './App.css';
 
 function App() {
@@ -34,22 +34,11 @@ function App() {
   return (
     <div className="App">
       
-      <div className={`card-container ${selectedCard ? 'hidden' : ''}`}>
-        {list.map((user) => (
-          <div key={user.id} className="card">
-            <div className="card-header">
-              {user.title}
-            </div>
-            <div className="card-body">
-              Haz click para obtener más información.
-              <Buttons user={user}
-              HandleDelete={HandleDelete}
-              UserClick={UserClick}/>
-              
-            </div>
-          </div>
-        ))}
-      </div>
+     <CardList
+      list={list} 
+      HandleDelete={HandleDelete} 
+      UserClick={UserClick} 
+      selectedCard={selectedCard}/>
 
      
       {selectedCard && (
@@ -63,6 +52,8 @@ function App() {
   
 
 }
+
+
 
 
 
