@@ -1,7 +1,12 @@
 import Buttons from "../Buttons/Buttons.js"
 import './CardList.css'
 
-export default function CardList({ selectedCard, list, HandleDelete, UserClick }){
+export default function CardList({ selectedCard, list, handleDelete, userClick }){
+
+  
+    if (selectedCard) {
+      return null; 
+    }
 
     return(
     <div className={`card-container ${selectedCard ? 'hidden' : ''}`}>
@@ -14,8 +19,8 @@ export default function CardList({ selectedCard, list, HandleDelete, UserClick }
                 Haz click para obtener más información.
                 <Buttons 
                 user={user}
-                HandleDelete={HandleDelete}
-                UserClick={UserClick}/>
+                handleDelete={handleDelete}
+                userClick={userClick}/>
                 
               </div>
             </div>

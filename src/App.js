@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import SelectCard from './Components/SelectCard/SelectCard';
+import PostDetail from './Components/PostDetail/PostDetail';
 import CardList from './Components/CardList/CardList';
 import './App.css';
 
@@ -16,7 +16,7 @@ function App() {
       });
   }, []);
 
-  function UserClick(id) {
+  function userClick(id) {
     
     fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
       .then(response => response.json())
@@ -26,7 +26,7 @@ function App() {
       });
   }
 
-  function HandleDelete(id) {
+  function handleDelete(id) {
     
     setList(prevList => prevList.filter(post => post.id !== id));
   }
@@ -36,13 +36,13 @@ function App() {
       
      <CardList
       list={list} 
-      HandleDelete={HandleDelete} 
-      UserClick={UserClick} 
+      handleDelete={handleDelete} 
+      userClick={userClick} 
       selectedCard={selectedCard}/>
 
      
       {selectedCard && (
-        <SelectCard selectedCard={selectedCard}
+        <PostDetail selectedCard={selectedCard}
          setSelectedCard={setSelectedCard}/>
         
       )}

@@ -1,13 +1,13 @@
 
 import './Buttons.css'
 
-export default function Buttons({user,HandleDelete,UserClick}){
+export default function Buttons({user,handleDelete,userClick}){
 
     return(
       <div className='container-buttons'>
             
-              <button className='button-delete' onClick={() => HandleDelete(user.id)}>Eliminar</button>
-              <button className='button-select-card' onClick={()=> UserClick(user.id)}>Ver</button>
+              <button className='button-delete' onClick={() => handleDelete(user.id)}>Eliminar</button>
+              <button className='button-select-card' onClick={()=> userClick(user.id)}>Ver</button>
               </div>
     )
   }

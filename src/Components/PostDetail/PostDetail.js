@@ -1,4 +1,4 @@
-import './SelectCard.css'
+import './PostDetail.css'
 
 
 export default function SelectCard({selectedCard,setSelectedCard}){
