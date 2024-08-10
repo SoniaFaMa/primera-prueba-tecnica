@@ -3,7 +3,15 @@ import './CardList.css';
 
 export default function CardList({ selectedCard, list, handleDelete, userClick}) {
   if (selectedCard) {
-    return null;
+    return (
+      !selectedCard && <CardList
+        list={list} 
+        handleDelete={handleDelete} 
+        userClick={userClick} 
+        selectedCard={selectedCard}/>
+    )
+    
+
   }
 
   

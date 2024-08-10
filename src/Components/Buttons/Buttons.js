@@ -3,7 +3,7 @@ import './Buttons.css'
 
 export default function Buttons({user,handleDelete,userClick}){
 
-  console.log('userClick:', userClick)
+ 
     return(
       <div className='container-buttons'>
             
